@@ -1,0 +1,159 @@
+<!	DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional // EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<title> Tic Tac Toe game </title>
+<style>
+
+  td:hover {background-color:#FFAC59;}
+table{}
+  td{ font-size: 50px;
+       cursor:pointer;
+     height:125px;
+   width:125px;}
+  button{display:block;
+    margin:10px auto;
+    height:40px;
+}
+  #a1:hover {background-color:#FFAC59;}
+  #a1{  height:40px;width:70px;
+        }
+
+  </style>
+  </head>
+<body>
+  <script>
+  function a11(){
+  document.write("aa");}
+</script>
+
+  <th>
+<font size="9px" face="Courier New">  <h1 style="text-align:center">  TIC TAC TOE</h1></font>
+    </th>
+<table align="center"  border ="3" width="500" cellpadding="30" cellspacing="0"  style="text-align:center">
+<tr>
+<td class="cell" id="a1">
+</td>
+<td class="cell" id="a2">
+
+</td>
+<td class="cell" id="a3">
+
+</td>
+</tr>
+<td class="cell" id="a4">
+
+</td>
+<td class="cell" id="a5">
+
+</td>
+<td class="cell" id="a6">
+
+</td>
+</tr>
+<td class="cell" id="a7">
+
+</td>
+<td class="cell" id="a8">
+
+  </td>
+  <td class="cell" id="a9">
+
+  </td>
+</tr>
+<button onclick="startgame()">Replay</button>
+
+</table>
+
+
+</font>
+</br></br></br>
+
+ <script>
+
+
+   var a1=document.getElementById("a1");
+   var a2=document.getElementById("a2");
+   var a3=document.getElementById("a3");
+   var a4=document.getElementById("a4");
+   var a5=document.getElementById("a5");
+   var a6=document.getElementById("a6");
+   var a7=document.getElementById("a7");
+   var a8=document.getElementById("a8");
+   var a9=document.getElementById("a9");
+   const cells=document.querySelectorAll('.cell');
+   startgame();
+var i=0;
+function startgame()
+{for(var j=0;j<cells.length;j++){
+  cells[j].innerText='';
+  cells[j].addEventListener('click',clicking,false);
+}
+}
+
+function clicking(number){
+  turn(number.target.id);
+}
+function turn(c){
+
+   if((i%2==0)&&( document.getElementById(c).innerText!='X'))
+{
+
+     document.getElementById(c).innerText=0;
+     ++i;
+check();
+}
+   else{if( document.getElementById(c).innerText!='0'){
+     document.getElementById(c).innerText='X';
+     ++i;
+     check();
+}}
+
+}
+function check(){
+if((a1.innerText!=""&&a1.innerText==a2.innerText&&a1.innerText==a3.innerText)
+||(a4.innerText!=""&&a4.innerText==a5.innerText&&a4.innerText==a6.innerText)
+||(a7.innerText!=""&&a7.innerText==a8.innerText&&a7.innerText==a9.innerText)
+||(a1.innerText!=""&&a1.innerText==a4.innerText&&a1.innerText==a7.innerText)
+||(a2.innerText!=""&&a2.innerText==a5.innerText&&a2.innerText==a8.innerText)
+||(a3.innerText!=""&&a3.innerText==a6.innerText&&a3.innerText==a9.innerText)
+||(a1.innerText!=""&&a1.innerText==a5.innerText&&a1.innerText==a9.innerText)
+||(a3.innerText!=""&&a3.innerText==a5.innerText&&a3.innerText==a7.innerText))
+
+{
+  if(i%2==0){
+    alert("player 2 wins");
+    i=0;
+    startgame();
+  }
+  else {
+    alert("player 1 wins");
+    i=0;
+    startgame();
+  }
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </script>
+</body>
+
+</html>
